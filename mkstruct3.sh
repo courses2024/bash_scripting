@@ -8,14 +8,14 @@ KURSNAME=${1:-$KURSNAME}
 # Wenn KURSNAME leer ist, nehme den Default-Namen "Kurs"
 KURSNAME=${KURSNAME:-Kurs}
 
-mkdir ${kursdir}
-mkdir ${kursdir}/block1
-mkdir ${kursdir}/block1/aufgaben
-mkdir ${kursdir}/block1/loesungen
-cp -R ${kursdir}/block1 ${kursdir}/block2
-cp -R ${kursdir}/block1 ${kursdir}/block3
-cp -R ${kursdir}/block1 ${kursdir}/block4
-cp -R ${kursdir}/block1 ${kursdir}/block5
+mkdir ${KURSNAME}
+mkdir ${KURSNAME}/block1
+mkdir ${KURSNAME}/block1/aufgaben
+mkdir ${KURSNAME}/block1/loesungen
+cp -R ${KURSNAME}/block1 ${KURSNAME}/block2
+cp -R ${KURSNAME}/block1 ${KURSNAME}/block3
+cp -R ${KURSNAME}/block1 ${KURSNAME}/block4
+cp -R ${KURSNAME}/block1 ${KURSNAME}/block5
 
 
 
