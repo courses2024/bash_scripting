@@ -17,6 +17,6 @@ then
 	cp -R ${dir}/block1 ${dir}/block5
 	exit 0
 else
-	echo Verzeichnis $dir konnte nicht angelegt werden 2>&
+	echo "Verzeichnis $dir konnte nicht angelegt werden" 1>&2
 	exit 1
 fi
