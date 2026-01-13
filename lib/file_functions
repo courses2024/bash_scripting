@@ -14,7 +14,7 @@
 entry_exists() {
     if test -e  $1  2>/dev/null
     then
-	    return 0
+    	return 0
     fi
 	return 1
 }
@@ -26,7 +26,7 @@ export -f entry_exists
 is_writable() {
     if test -w  $1  2>/dev/null
     then
-	    return 0
+	return 0
     fi
 	return 1
 }
@@ -78,4 +78,4 @@ is_writable_dir() {
   return 1
 }
 
-# export –f is_writable_dir
+export –f is_writable_dir

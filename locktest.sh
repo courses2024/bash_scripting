@@ -30,11 +30,11 @@ while true; do
                 echo $$ > /tmp/locktest/lock
                 chmod ugo-w /tmp/locktest/lock
                 echo $(date) $$ >> /tmp/locktest/common
-                sleep 2
                 chmod ugo+w /tmp/locktest/lock
+                sleep 3
         else
                 lock_pid=$(cat /tmp/locktest/lock)
                 echo "Datei gesperrt durch Prozess $lock_pid"
-                sleep 5
+                sleep 2
         fi
 done
