@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Überprüfen, ob der Logfile angegeben wurde
+if [ -z "$1" ]; then
+  echo "Bitte geben Sie den Namen des Logfiles an."
+  exit 1
+fi
+
+logfile=$1
+
+# Gesamteranzahl der Failed password Meldungen
+export total=$(grep "Failed password" $logfile | wc -l)
+echo $total lines with '"Failed password"' found
+
+# Berechnung und Ausgabe der Anteile in Prozent
+grep "Failed password" $logfile |
+ awk '{print $(NF-3)}' |                           
+ sort |                                            
+ uniq -c |                                         
+ sort -nr |                                        
+ head -n 10 | while read number ip
+ do
+     pct=$(echo "$number * 100 / $total" | bc -l)
+     printf "%5d %-15s %6.2f%%\n" $number "$ip" $pct
+ done
