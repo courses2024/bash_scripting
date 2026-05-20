@@ -46,7 +46,7 @@ grep "Failed password" $logfile |
  awk '{hour = substr($1,1,10) " " substr($1,12,2); print hour}' |  
  sort |
  uniq -c |                                                  
- awk '{print $2 " " $3 " bis " $3+1 " Uhr"}'          
+ awk '{print $1 " " $2 " " $3 " bis " $3+1 " Uhr"}'          
  # awk '{print $logfile " " $2 " " $3 " bis " $3+1 " Uhr"}'          
 echo
 # Siehe vorherige Beschreibung V1. Schritte 1. - 4. Zusätzlich:
